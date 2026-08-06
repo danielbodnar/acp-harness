@@ -1,0 +1,10 @@
+{
+  "files": [],
+  "references": [
+    { "path": "packages/acp-client" },
+    { "path": "packages/marketplace" },
+    { "path": "packages/mock-agent" },
+    { "path": "packages/harness" },
+    { "path": "packages/mcp-server" }
+  ]
+}

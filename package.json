@@ -1,0 +1,30 @@
+{
+  "name": "acp-harness",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Vendor-agnostic ACP (Agent Client Protocol) harness: CLI/TUI, multi-provider plugin marketplace, bundled skills, and an MCP 2.0 server with ext-apps support.",
+  "license": "MIT",
+  "type": "module",
+  "engines": {
+    "node": ">=20"
+  },
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "build": "tsc -b packages/acp-client packages/marketplace packages/mock-agent packages/harness packages/mcp-server",
+    "clean": "tsc -b --clean packages/acp-client packages/marketplace packages/mock-agent packages/harness packages/mcp-server && rimraf packages/*/dist",
+    "typecheck": "tsc -b --noEmit packages/acp-client packages/marketplace packages/mock-agent packages/harness packages/mcp-server",
+    "test": "npm run build && node scripts/verify.mjs",
+    "harness": "node packages/harness/dist/index.js",
+    "mcp": "node packages/mcp-server/dist/index.js",
+    "verify": "node scripts/verify.mjs",
+    "openspec:validate": "openspec validate --all --strict"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.0",
+    "rimraf": "^6.0.1",
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.2"
+  }
+}
