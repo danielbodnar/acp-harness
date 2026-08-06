@@ -1,0 +1,20 @@
+{
+  "name": "@acp/harness",
+  "version": "0.1.0",
+  "description": "Vendor-agnostic ACP CLI/TUI harness — drive any ACP-compliant coding agent.",
+  "license": "MIT",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "bin": {
+    "acp-harness": "./bin/acp-harness.js"
+  },
+  "files": ["dist", "bin"],
+  "dependencies": {
+    "@acp/acp-client": "*",
+    "@acp/marketplace": "*"
+  },
+  "scripts": {
+    "build": "tsc -b"
+  }
+}
