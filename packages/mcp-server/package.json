@@ -1,0 +1,23 @@
+{
+  "name": "@acp/mcp-server",
+  "version": "0.1.0",
+  "description": "MCP 2.0 server exposing the ACP harness, plugin marketplace, and skills — with ext-apps (MCP Apps) UI.",
+  "license": "MIT",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "bin": {
+    "acp-harness-mcp": "./bin/acp-harness-mcp.js"
+  },
+  "files": ["dist", "bin"],
+  "dependencies": {
+    "@acp/acp-client": "*",
+    "@acp/marketplace": "*",
+    "@modelcontextprotocol/ext-apps": "^1.7.5",
+    "@modelcontextprotocol/sdk": "^1.30.0",
+    "zod": "^4.0.0"
+  },
+  "scripts": {
+    "build": "tsc -b"
+  }
+}
