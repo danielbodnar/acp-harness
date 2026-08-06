@@ -1,0 +1,19 @@
+{
+  "name": "@acp/mock-agent",
+  "version": "0.1.0",
+  "description": "A minimal reference ACP agent used to exercise the harness end-to-end offline.",
+  "license": "MIT",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "bin": {
+    "acp-mock-agent": "./bin/acp-mock-agent.js"
+  },
+  "files": ["dist", "bin"],
+  "dependencies": {
+    "@acp/acp-client": "*"
+  },
+  "scripts": {
+    "build": "tsc -b"
+  }
+}
