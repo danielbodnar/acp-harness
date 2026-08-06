@@ -1,0 +1,32 @@
+schema: spec-driven
+
+context: |
+  Project: acp-harness — a vendor-agnostic Agent Client Protocol (ACP) harness.
+
+  Tech stack:
+    - TypeScript 5.7 (ESM, NodeNext module resolution), Node.js >= 20
+    - npm workspaces monorepo under packages/*
+    - @modelcontextprotocol/sdk (MCP server), @modelcontextprotocol/ext-apps (MCP Apps / ext-apps)
+    - No heavyweight ACP SDK dependency: the ACP client is implemented directly over
+      newline-delimited JSON-RPC 2.0 (ndjson) so the harness stays vendor-agnostic.
+
+  Conventions:
+    - Conventional Commits.
+    - Every package builds to dist/ via TypeScript project references (`tsc -b`).
+    - Relative imports use explicit `.js` extensions (ESM/NodeNext requirement).
+    - Specs are the source of truth; propose changes before implementing.
+
+  Domain glossary:
+    - ACP: Agent Client Protocol — editor(client) <-> coding-agent JSON-RPC over stdio.
+    - MCP: Model Context Protocol — agent <-> tools/data. "MCP 2.0" here means the
+      modern MCP with Streamable HTTP transport, capability/extension negotiation, and
+      the MCP Apps (ext-apps) extension `io.modelcontextprotocol/ui`.
+    - Plugin marketplace: a Claude Code compatible `.claude-plugin/marketplace.json`
+      catalog that also classifies plugins by provider (claude | github | generic-agent).
+    - Skill: an Agent Skills `SKILL.md` folder, bundled inside a plugin.
+
+rules:
+  proposal:
+    - Keep proposals focused; list Non-goals when scope is ambiguous.
+  tasks:
+    - Group tasks by capability and keep them independently checkable.
