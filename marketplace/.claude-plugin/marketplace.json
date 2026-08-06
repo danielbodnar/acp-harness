@@ -1,0 +1,52 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-marketplace.json",
+  "name": "acp-harness-marketplace",
+  "owner": {
+    "name": "ACP Harness",
+    "email": "harness@example.com"
+  },
+  "metadata": {
+    "description": "Multi-provider marketplace for the ACP Harness: Claude skill plugins, GitHub-sourced ACP agents, and generic ACP agent templates.",
+    "version": "0.1.0",
+    "pluginRoot": "./plugins"
+  },
+  "plugins": [
+    {
+      "name": "acp-harness-skills",
+      "source": "./plugins/acp-harness-skills",
+      "description": "Curated Agent Skills for running ACP agents, curating this marketplace, and building MCP Apps (ext-apps) UIs. Bundles the ACP Harness MCP server.",
+      "version": "0.1.0",
+      "category": "development",
+      "provider": "claude",
+      "keywords": ["acp", "mcp", "ext-apps", "skills", "marketplace", "harness"],
+      "author": { "name": "ACP Harness" }
+    },
+    {
+      "name": "gemini-cli-acp",
+      "source": { "source": "github", "repo": "google-gemini/gemini-cli" },
+      "description": "Gemini CLI as an ACP agent (native --experimental-acp). Installed from GitHub.",
+      "provider": "github",
+      "category": "agents",
+      "agent": { "command": "gemini", "args": ["--experimental-acp"] },
+      "keywords": ["agent", "gemini", "google", "github"]
+    },
+    {
+      "name": "claude-code-acp",
+      "source": { "source": "github", "repo": "zed-industries/claude-code-acp" },
+      "description": "Claude Code exposed over ACP via the claude-code-acp adapter. Installed from GitHub.",
+      "provider": "github",
+      "category": "agents",
+      "agent": { "command": "npx", "args": ["-y", "@zed-industries/claude-code-acp"] },
+      "keywords": ["agent", "claude", "anthropic", "github", "adapter"]
+    },
+    {
+      "name": "generic-acp-agent",
+      "source": "./plugins/generic-acp-agent",
+      "description": "A provider-agnostic ACP agent template. Copy it and point the launch descriptor at any ACP-compliant agent binary.",
+      "provider": "generic-agent",
+      "category": "agents",
+      "agent": { "command": "your-acp-agent", "args": ["--acp"] },
+      "keywords": ["agent", "generic", "acp", "template", "vendor-agnostic"]
+    }
+  ]
+}

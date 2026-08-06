@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "acp-harness": {
+      "command": "node",
+      "args": ["${CLAUDE_PLUGIN_ROOT}/../../../packages/mcp-server/bin/acp-harness-mcp.js"]
+    }
+  }
+}

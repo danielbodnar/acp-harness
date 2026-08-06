@@ -1,0 +1,36 @@
+{
+  "$schema": "./agents.schema.json",
+  "agents": [
+    {
+      "id": "mock",
+      "name": "ACP Mock Agent",
+      "description": "Bundled reference ACP agent for offline testing and demos.",
+      "command": "node",
+      "args": ["${repoRoot}/packages/mock-agent/bin/acp-mock-agent.js"]
+    },
+    {
+      "id": "gemini",
+      "name": "Gemini CLI",
+      "description": "Google's Gemini CLI speaks ACP natively via --experimental-acp.",
+      "command": "gemini",
+      "args": ["--experimental-acp"],
+      "auth": "Run `gemini` once to authenticate, or set GEMINI_API_KEY."
+    },
+    {
+      "id": "claude-code",
+      "name": "Claude Code (ACP adapter)",
+      "description": "Claude Code via the claude-code-acp adapter.",
+      "command": "npx",
+      "args": ["-y", "@zed-industries/claude-code-acp"],
+      "auth": "Uses your Claude Code / Anthropic credentials."
+    },
+    {
+      "id": "codex",
+      "name": "Codex (ACP adapter)",
+      "description": "OpenAI Codex via the codex-acp adapter.",
+      "command": "codex-acp",
+      "args": [],
+      "auth": "Requires codex-acp installed and OpenAI credentials."
+    }
+  ]
+}

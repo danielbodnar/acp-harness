@@ -1,0 +1,8 @@
+{
+  "name": "generic-acp-agent",
+  "version": "0.1.0",
+  "description": "A provider-agnostic ACP agent template. Copy it and point agent.json at any ACP-compliant agent binary.",
+  "author": { "name": "ACP Harness" },
+  "license": "MIT",
+  "keywords": ["acp", "agent", "generic", "template", "vendor-agnostic"]
+}

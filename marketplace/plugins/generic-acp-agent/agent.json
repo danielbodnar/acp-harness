@@ -1,0 +1,10 @@
+{
+  "$schema": "../../../config/agents.schema.json",
+  "id": "generic-acp-agent",
+  "name": "Generic ACP Agent",
+  "description": "Template launch descriptor for any ACP-compliant agent. Replace command/args with your agent, then add it to config/agents.json.",
+  "command": "your-acp-agent",
+  "args": ["--acp"],
+  "env": {},
+  "auth": "Document how your agent authenticates here."
+}

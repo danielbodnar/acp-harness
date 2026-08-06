@@ -1,0 +1,26 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "ACP Harness agent registry",
+  "type": "object",
+  "required": ["agents"],
+  "properties": {
+    "agents": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "name", "command"],
+        "properties": {
+          "id": { "type": "string", "description": "Unique agent id used on the CLI." },
+          "name": { "type": "string" },
+          "description": { "type": "string" },
+          "command": { "type": "string", "description": "Executable to launch. Supports ${repoRoot} and ${cwd}." },
+          "args": { "type": "array", "items": { "type": "string" } },
+          "env": { "type": "object", "additionalProperties": { "type": "string" } },
+          "cwd": { "type": "string" },
+          "auth": { "type": "string", "description": "Human note describing how to authenticate." }
+        },
+        "additionalProperties": false
+      }
+    }
+  }
+}

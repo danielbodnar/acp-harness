@@ -1,0 +1,8 @@
+{
+  "name": "acp-harness-skills",
+  "version": "0.1.0",
+  "description": "Curated Agent Skills for the ACP Harness: run ACP agents, curate the marketplace, and build MCP Apps (ext-apps) UIs. Bundles the ACP Harness MCP server.",
+  "author": { "name": "ACP Harness" },
+  "license": "MIT",
+  "keywords": ["acp", "mcp", "ext-apps", "skills", "marketplace", "harness"]
+}

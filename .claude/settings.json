@@ -1,0 +1,14 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-settings.json",
+  "extraKnownMarketplaces": {
+    "acp-harness-marketplace": {
+      "source": { "source": "github", "repo": "your-org/acp-harness" }
+    },
+    "modelcontextprotocol-ext-apps": {
+      "source": { "source": "github", "repo": "modelcontextprotocol/ext-apps" }
+    },
+    "anthropic-agent-skills": {
+      "source": { "source": "github", "repo": "anthropics/skills" }
+    }
+  }
+}
