@@ -24,7 +24,7 @@ by **provider**.
 
 ## Add & install (Claude Code)
 
-```
+```text
 /plugin marketplace add <path-to-this-marketplace-dir OR owner/repo>
 /plugin install acp-harness-skills@acp-harness-marketplace
 ```

@@ -13,6 +13,7 @@ protocol over stdio can be driven by the harness and any ACP-compatible editor.
    ```json
    { "id": "my-agent", "name": "My Agent", "command": "my-acp-agent", "args": ["--acp"] }
    ```
+
 4. Run it:
 
    ```bash

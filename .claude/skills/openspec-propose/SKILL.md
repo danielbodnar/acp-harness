@@ -15,6 +15,7 @@ Propose a new change - create the change and generate all artifacts in one step.
 **Planning boundary**: This workflow creates planning artifacts only. The user request that selected or triggered this workflow authorizes planning only, even if it asks to build or fix something. Do not edit project code. After the planning artifacts are complete, stop. Do not start implementation in the same response, even if the initial request asks for it. Wait for a new user request after the artifacts are presented; then start the apply workflow.
 
 I'll create a change with the artifacts your schema defines. With the default spec-driven schema that is:
+
 - proposal.md (what & why)
 - `specs/<capability-path>/spec.md` (what the system must do - a delta, not the main spec)
 - design.md (how)
@@ -58,20 +59,25 @@ When the user is ready to implement, they must start the apply workflow explicit
    Choose one schema form below. If a registered store is selected, append `--store "<store-id>"` to that command and each later OpenSpec command shown below that accepts `--store`.
 
    Using the configured default:
+
    ```bash
    openspec new change "<name>"
    ```
 
    Using an explicitly requested schema:
+
    ```bash
    openspec new change "<name>" --schema "<schema-name>"
    ```
+
    This creates a scaffolded change in the planning home resolved by the CLI with `.openspec.yaml`.
 
 4. **Get the artifact build order**
+
    ```bash
    openspec status --change "<name>" --json
    ```
+
    Parse the JSON to get:
    - `applyRequires`: array of artifact IDs needed before implementation (e.g., `["tasks"]`)
    - `artifacts`: list of all artifacts, each with its `status` and its `requires` edges (the artifact IDs it directly depends on)
@@ -85,9 +91,11 @@ When the user is ready to implement, they must start the apply workflow explicit
 
    a. **For each artifact that is `ready` (dependencies satisfied)**:
       - Get instructions:
+
         ```bash
         openspec instructions <artifact-id> --change "<name>" --json
         ```
+
       - The instructions JSON includes:
         - `context`: Project background (constraints for you - do NOT include in output)
         - `rules`: Artifact-specific rules (constraints for you - do NOT include in output)
@@ -117,6 +125,7 @@ When the user is ready to implement, they must start the apply workflow explicit
       - Then continue with creation
 
 6. **Show final status**
+
    ```bash
    openspec status --change "<name>"
    ```
@@ -124,6 +133,7 @@ When the user is ready to implement, they must start the apply workflow explicit
 **Output**
 
 After completing all artifacts, summarize:
+
 - Change name and location
 - List of artifacts created with brief descriptions, plus any conditional artifact you skipped and why
 - What's ready: "All artifacts needed for implementation are ready."
@@ -141,6 +151,7 @@ After completing all artifacts, summarize:
   - These guide what you write, but should never appear in the output
 
 **Guardrails**
+
 - The request that invoked this workflow authorizes planning only. Any implementation or apply instruction in that request does not carry forward. Do NOT implement the change, start the apply workflow, or edit project code during this workflow. After presenting the artifacts, stop and wait for a new user request to start the apply workflow
 - Create every artifact the apply phase transitively depends on, not just the ids listed in `apply.requires`
 - Always read dependency artifacts before creating a new one - re-read from disk, not from conversation memory (files may have changed since you last saw them)

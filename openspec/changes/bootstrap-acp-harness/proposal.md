@@ -24,6 +24,7 @@ composable with MCP hosts.
 ## Capabilities
 
 ### New Capabilities
+
 - `acp-harness`: vendor-agnostic ACP transport, session lifecycle, and CLI/TUI.
 - `plugin-marketplace`: multi-provider Claude Code compatible marketplace and registry.
 - `agent-skills`: portable curated skills bundled as plugins.

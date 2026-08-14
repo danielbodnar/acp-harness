@@ -49,7 +49,7 @@ node packages/mcp-server/dist/index.js --http 3339 # Streamable HTTP at http://l
 
 ## Architecture
 
-```
+```text
 packages/
   acp-client   Vendor-agnostic ACP client: ndjson JSON-RPC 2.0 over stdio (no vendor SDK)
   mock-agent   Reference ACP agent for offline end-to-end testing
@@ -112,7 +112,7 @@ registry:
 | `github` | `gemini-cli-acp`, `claude-code-acp` |
 | `generic-agent` | `generic-acp-agent` (template for any ACP agent binary) |
 
-```
+```text
 /plugin marketplace add <path-or-owner/repo>
 /plugin install acp-harness-skills@acp-harness-marketplace
 ```

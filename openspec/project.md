@@ -11,7 +11,7 @@ A vendor-agnostic **Agent Client Protocol (ACP)** harness plus the ecosystem aro
 
 ## Architecture
 
-```
+```text
 packages/
   acp-client   ACP JSON-RPC (ndjson) client library — the vendor-agnostic core
   mock-agent   Reference ACP agent used for local end-to-end testing

@@ -28,9 +28,11 @@ Implement tasks from an OpenSpec change.
    Always announce: "Using change: <name>" and how to override (e.g., `/opsx:apply <other>`).
 
 2. **Check status to understand the schema**
+
    ```bash
    openspec status --change "<name>" --json
    ```
+
    Parse the JSON to understand:
    - `schemaName`: The workflow being used (e.g., "spec-driven")
    - `planningHome`, `changeRoot`, and `actionContext`: planning scope and edit constraints
@@ -113,7 +115,7 @@ Implement tasks from an OpenSpec change.
 
 **Output During Implementation**
 
-```
+```text
 ## Implementing: <change-name> (schema: <schema-name>)
 
 Working on task 3/7: <task description>
@@ -127,7 +129,7 @@ Working on task 4/7: <task description>
 
 **Output On Completion**
 
-```
+```text
 ## Implementation Complete
 
 **Change:** <change-name>
@@ -144,7 +146,7 @@ All tasks complete! You can archive this change with `/opsx:archive`.
 
 **Output On Pause (Issue Encountered)**
 
-```
+```text
 ## Implementation Paused
 
 **Change:** <change-name>
@@ -163,6 +165,7 @@ What would you like to do?
 ```
 
 **Guardrails**
+
 - Keep going through tasks until done or blocked
 - Always read context files before starting (from the apply instructions output)
 - If task is ambiguous, pause and ask before implementing

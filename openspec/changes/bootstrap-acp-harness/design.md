@@ -10,6 +10,7 @@ host in a sandboxed iframe.
 ## Goals / Non-Goals
 
 **Goals:**
+
 - A dependency-light ACP core that works with any compliant agent.
 - Faithful use of the *real* MCP + ext-apps SDKs so the server is a valid MCP 2.0 server.
 - A marketplace that is simultaneously a valid Claude Code catalog and a richer,
@@ -17,6 +18,7 @@ host in a sandboxed iframe.
 - The whole thing must build and run offline (via the bundled mock agent).
 
 **Non-Goals:**
+
 - Remote ACP transports; a bespoke TUI toolkit; real Claude config mutation on install.
 
 ## Decisions

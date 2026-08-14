@@ -19,7 +19,7 @@ ext-apps View. See `.mcp.json`.
 
 ## Install
 
-```
+```text
 /plugin marketplace add <path-or-owner/repo-of-this-marketplace>
 /plugin install acp-harness-skills@acp-harness-marketplace
 ```
